@@ -3,8 +3,8 @@ import requests
 
 app = Flask(__name__)
 
-USER_SERVICE_URL = "http://user_service:5001/users"
-ORDER_SERVICE_URL = "http://order_service:5002/orders"
+USER_SERVICE_URL = os.environ.get("USER_URL", "https://micro-user-6dfk.onrender.com")
+ORDER_SERVICE_URL = os.environ.get("ORDER_URL", "https://micro-order-kf9s.onrender.com")
 
 
 @app.route('/')
