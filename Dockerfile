@@ -1,7 +1,11 @@
-FROM python:3.11-slim
+FROM python:3.12-slim
+
 WORKDIR /app
-COPY requirements.txt .
+
+COPY . /app
+
 RUN pip install --no-cache-dir -r requirements.txt
-COPY . .
-EXPOSE 5000
-CMD ["python", "app.py"]
+
+EXPOSE 10000
+
+CMD ["python", "frontend/app.py"]
